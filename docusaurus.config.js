@@ -11,8 +11,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   ], */
   customFields: {
     //talkyardServerUrl: 'http://site-ovlg221le9.localhost',
-    talkyardServerUrl: 'https://embcom-test.talkyard.io',
-    //talkyardServerUrl: 'https://site-1mz3non7ir.talkyard.io',
+    //talkyardServerUrl: 'https://embcom-test.talkyard.io',
+    /*
+    Action required: In your blog's HTML templates, change the Talkyard server URL to https://site-1mz3non7ir.talkyard.io, like so:
+    <script>talkyardServerUrl='https://site-1mz3non7ir.talkyard.io';</script>
+    */
+    talkyardServerUrl: 'https://site-1mz3non7ir.talkyard.io',
   },
 
   title: 'My Site',
