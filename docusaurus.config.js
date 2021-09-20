@@ -4,6 +4,17 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
+  /*
+  scripts: [{
+    src: 'http://comments-for-e2e-test-embcomman-localhost-8080.localhost/-/talkyard-comments.js',
+    async: true, defer: true, 'data-domain': 'yourdomain.com' },
+  ], */
+  customFields: {
+    //talkyardServerUrl: 'http://site-ovlg221le9.localhost',
+    talkyardServerUrl: 'https://embcom-test.talkyard.io',
+    //talkyardServerUrl: 'https://site-1mz3non7ir.talkyard.io',
+  },
+
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   url: 'https://your-docusaurus-test-site.com',
