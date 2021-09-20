@@ -21,17 +21,22 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 export default function TalkyardComments(props: { discId?: string }): JSX.Element {
   console.log('In TalkyardComments');
   const { siteConfig } = useDocusaurusContext();
-  const { talkyardServerUrl } = siteConfig.customFields;
-  global.talkyardServerUrl = talkyardServerUrl;
+  const talkyardServerUrl = siteConfig.customFields.talkyardServerUrl as string;
   // <script>talkyardServerUrl='http://comments-for-e2e-test-embcomman-localhost-8080.localhost';</script>
   // <script async defer src="http://comments-for-e2e-test-embcomman-localhost-8080.localhost/-/talkyard-comments.js"></script>
   // <script async defer src="http://site-ovlg221le9.localhost/-/talkyard-comments.js"></script>
 
 
-  // and:  .min
+  // Doesn't work, then ignores talkyardServerUrl  and instead uses
+  // the CDN's origin:
+  // global.talkyardServerUrl = talkyardServerUrl;
+  //<script async defer src="https://tyw-49f8.kxcdn.com/-/talkyard-comments.js"></script>
+
+  // later:  .min
+
   return <>
     <Head>
-      <script async defer src="https://tyw-49f8.kxcdn.com/-/talkyard-comments.js"></script>
+      <script async defer src={talkyardServerUrl + '/-/talkyard-comments.js'}></script>
     </Head>
     <div className="talkyard-comments" data-discussion-id={ props?.discId || '' }></div>
   </>;
